@@ -1,17 +1,10 @@
 # Python Distributed Hash Table
-[![Build Status](https://secure.travis-ci.org/bmuller/kademlia.png?branch=master)](https://travis-ci.org/bmuller/kademlia)
-[![Docs Status](https://readthedocs.org/projects/kademlia/badge/?version=latest)](http://kademlia.readthedocs.org)
-
-**Documentation can be found at [kademlia.readthedocs.org](http://kademlia.readthedocs.org/).**
+---
 
 This library is an asynchronous Python implementation of the [Kademlia distributed hash table](http://en.wikipedia.org/wiki/Kademlia).  It uses the [asyncio library](https://docs.python.org/3/library/asyncio.html) in Python 3 to provide asynchronous communication.  The nodes communicate using [RPC over UDP](https://github.com/bmuller/rpcudp) to communiate, meaning that it is capable of working behind a [NAT](http://en.wikipedia.org/wiki/Network_address_translation).
 
 This library aims to be as close to a reference implementation of the [Kademlia paper](http://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf) as possible.
 
-## Installation
-
-```
-pip install kademlia
 ```
 
 ## Usage
@@ -56,17 +49,6 @@ log = logging.getLogger('kademlia')
 log.setLevel(logging.DEBUG)
 log.addHandler(logging.StreamHandler())
 ```
-
-## Running Tests
-To run tests:
-
-```
-pip install -r dev-requirements.txt
-python -m unittest
-```
-
-## Reporting Issues
-Please report all issues [on github](https://github.com/bmuller/kademlia/issues).
 
 ## Fidelity to Original Paper
 The current implementation should be an accurate implementation of all aspects of the paper save one - in Section 2.3 there is the requirement that the original publisher of a key/value republish it every 24 hours.  This library does not do this (though you can easily do this manually).
